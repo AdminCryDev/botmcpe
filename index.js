@@ -4,8 +4,8 @@ const express = require('express'); // Tambahkan Express untuk membuat endpoint 
 // Fungsi untuk memulai bot
 function startBot() {
   const client = createClient({
-    host: 'serverbot2025.aternos.me', // Alamat server
-    port: 20153,                      // Port server
+    host: 'theminerood.aternos.me', // Alamat server
+    port: 16585,                      // Port server
     username: 'IsraModeCover',        // Nama bot
     offline: true,                    // Mode offline
     cacheDir: './auth-cache',         // Lokasi penyimpanan token
