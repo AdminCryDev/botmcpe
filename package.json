@@ -4,13 +4,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "bedrock-protocol": "^3.42.2"
+    "bedrock-protocol": "^3.42.2",
+    "express": "^4.21.2"
   }
 }
