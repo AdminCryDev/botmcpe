@@ -20,7 +20,7 @@ function startBot() {
   // Event: Ketika bot keluar dari server
   client.on('end', () => {
     console.log('Bot terputus dari server. Mencoba menyambung kembali...');
-    setTimeout(startBot, 5000); // Tunggu 5 detik sebelum mencoba kembali
+    setTimeout(startBot, 7000); // Tunggu 5 detik sebelum mencoba kembali
   });
 
   // Event: Ketika terjadi kesalahan
