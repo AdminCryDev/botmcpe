@@ -1,4 +1,5 @@
 const { createClient } = require('bedrock-protocol');
+const express = require('express'); // Tambahkan Express untuk membuat endpoint HTTP
 
 // Fungsi untuk memulai bot
 function startBot() {
@@ -57,6 +58,20 @@ function simulateMovement(client) {
     console.log(`Bot bergerak sedikit ke posisi baru: ${JSON.stringify(newPosition)}`);
   }, 30000); // Setiap 30 detik
 }
+
+// === Menambahkan Endpoint dengan Express ===
+const app = express();
+const port = 3000;
+
+// Endpoint root untuk memastikan bot online
+app.get('/', (req, res) => {
+  res.send('Bot is running!');
+});
+
+// Jalankan server HTTP
+app.listen(port, () => {
+  console.log(`HTTP server berjalan di port ${port}`);
+});
 
 // Memulai bot
 startBot();
