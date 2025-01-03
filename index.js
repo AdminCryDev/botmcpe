@@ -25,7 +25,14 @@ function startBot() {
   // Event: Ketika terjadi kesalahan
   client.on('error', (err) => {
     console.error('Terjadi kesalahan:', err.message);
-    console.error('Pastikan server online dan alamat/port benar.');
+    
+    if (err.message.includes('Ping timed out')) {
+      console.log('Terjadi kesalahan: Ping timed out');
+      console.log('Mencoba untuk memulai ulang bot...');
+      setTimeout(startBot, 5000); // Menunggu 5 detik dan mencoba lagi
+    } else {
+      console.error('Pastikan server online dan alamat/port benar.');
+    }
   });
 }
 
