@@ -1,9 +1,4 @@
-# Abaikan node_modules dan auth-cache
-node_modules/
-auth-cache/
-
-# Abaikan file log
-*.log
-
-# Abaikan file environment (jika ada)
-.env
+node_modules
+auth-cache
+npm-debug.log
+.DS_Store
