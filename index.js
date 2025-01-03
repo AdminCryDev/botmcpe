@@ -39,29 +39,33 @@ function startBot() {
 // Fungsi untuk simulasi gerakan kecil agar bot tidak dianggap AFK
 function simulateMovement(client) {
   setInterval(() => {
-    // Gerakan kecil di sekitar posisi bot
-    const randomX = Math.random() * 2 - 1; // Nilai acak antara -1 hingga 1
-    const randomZ = Math.random() * 2 - 1;
-    const newPosition = {
-      x: client.entity.position.x + randomX,
-      y: client.entity.position.y,
-      z: client.entity.position.z + randomZ,
-    };
+    // Pastikan client.entity dan client.entity.position ada
+    if (client.entity && client.entity.position) {
+      const randomX = Math.random() * 2 - 1; // Nilai acak antara -1 hingga 1
+      const randomZ = Math.random() * 2 - 1;
+      const newPosition = {
+        x: client.entity.position.x + randomX,
+        y: client.entity.position.y,
+        z: client.entity.position.z + randomZ,
+      };
 
-    // Kirim perintah gerakan ke server
-    client.queue('move_player', {
-      runtimeId: client.entity.runtimeId,
-      position: newPosition,
-      pitch: client.entity.pitch,
-      yaw: client.entity.yaw,
-      headYaw: client.entity.headYaw,
-      mode: 0, // Mode normal
-      onGround: true,
-      teleportCause: 0,
-      entityType: 0,
-    });
+      // Kirim perintah gerakan ke server
+      client.queue('move_player', {
+        runtimeId: client.entity.runtimeId,
+        position: newPosition,
+        pitch: client.entity.pitch,
+        yaw: client.entity.yaw,
+        headYaw: client.entity.headYaw,
+        mode: 0, // Mode normal
+        onGround: true,
+        teleportCause: 0,
+        entityType: 0,
+      });
 
-    console.log(`Bot bergerak sedikit ke posisi baru: ${JSON.stringify(newPosition)}`);
+      console.log(`Bot bergerak sedikit ke posisi baru: ${JSON.stringify(newPosition)}`);
+    } else {
+      console.log('Client.entity atau position belum tersedia.');
+    }
   }, 30000); // Setiap 30 detik
 }
 
