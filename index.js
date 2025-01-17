@@ -3,8 +3,8 @@ const { createClient } = require('bedrock-protocol');
 // Fungsi untuk memulai bot
 function startBot() {
   const client = createClient({
-    host: 'theminerood.aternos.me', // Alamat server
-    port: 16585,                      // Port server
+    host: 'aiserver.aternos.me', // Alamat server
+    port: 60751,                      // Port server
     username: 'IsraModeCover',        // Nama bot
     offline: true,                    // Mode offline
     cacheDir: './auth-cache',         // Lokasi penyimpanan token
